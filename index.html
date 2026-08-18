@@ -20,7 +20,7 @@
 
   <script src="scrub-engine.js"></script>
   <script>
-    // Clips are placeholders until Jessica says render. Engine falls back to stills on 404.
+    // Clips stay placeholders until Jessica says render. Stills are the world until then.
     mountScrollWorld(document.getElementById('world'), {
       brand: { name: 'Forti8', href: '#top' },
       cta: { label: 'Request Your Free Demo', href: 'https://calendly.com/krlclement/forti8-intake' },
@@ -30,7 +30,7 @@
       sections: [
         {
           id: 'messy', label: 'Chaos',
-          still: 'assets/still-0.jpg',
+          still: 'https://d8j0ntlcm91z4.cloudfront.net/user_3I5njasOHDoFYixWesSaTODjSjb/hf_20260818_154305_4e8ddd17-f24a-4ca2-98f9-fc64f093cd8d.png',
           clip: 'assets/vid/dive-0.mp4',
           accent: '#B4532A',
           scroll: 1.7, linger: 0.4,
@@ -41,7 +41,7 @@
         },
         {
           id: 'map', label: 'Map',
-          still: 'assets/still-1.jpg',
+          still: 'https://d8j0ntlcm91z4.cloudfront.net/user_3I5njasOHDoFYixWesSaTODjSjb/hf_20260818_154305_09402fa6-9dcd-4ba4-8ec4-a15379932885.png',
           clip: 'assets/vid/dive-1.mp4',
           accent: '#6B7280',
           scroll: 1.4, linger: 0.35,
@@ -52,7 +52,7 @@
         },
         {
           id: 'system', label: 'System',
-          still: 'assets/still-2.jpg',
+          still: 'https://d8j0ntlcm91z4.cloudfront.net/user_3I5njasOHDoFYixWesSaTODjSjb/hf_20260818_154305_fe034c4e-1f72-4157-8ee5-ff507a7d0aea.png',
           clip: 'assets/vid/dive-2.mp4',
           accent: '#1A1A1A',
           scroll: 1.5, linger: 0.4,
@@ -63,7 +63,7 @@
         },
         {
           id: 'ai', label: 'AI',
-          still: 'assets/still-3.jpg',
+          still: 'https://d8j0ntlcm91z4.cloudfront.net/user_3I5njasOHDoFYixWesSaTODjSjb/hf_20260818_154305_1822d197-9204-4c28-9b8a-c58bdc8528be.png',
           clip: 'assets/vid/dive-3.mp4',
           accent: '#B4532A',
           scroll: 1.4, linger: 0.35,
@@ -74,7 +74,7 @@
         },
         {
           id: 'recovered', label: 'Recovered',
-          still: 'assets/still-4.jpg',
+          still: 'https://d8j0ntlcm91z4.cloudfront.net/user_3I5njasOHDoFYixWesSaTODjSjb/hf_20260818_154305_e8c7c29a-4c0b-4c31-bbcd-74a260e5cb9c.png',
           clip: 'assets/vid/dive-4.mp4',
           accent: '#6B7280',
           scroll: 1.4, linger: 0.35,
@@ -85,13 +85,13 @@
         },
         {
           id: 'discuss', label: 'Discuss',
-          still: 'assets/still-5.jpg',
+          still: 'https://d8j0ntlcm91z4.cloudfront.net/user_3I5njasOHDoFYixWesSaTODjSjb/hf_20260818_154305_2322a5cf-0fe3-41b8-a1d6-d862109a2507.png',
           clip: 'assets/vid/dive-5.mp4',
           accent: '#B4532A',
           scroll: 1.8, linger: 0.45,
           eyebrow: 'Bucaramanga, and wherever you run',
           title: 'Show us the process you hate doing manually.',
-          body: 'Before you commit, we can build the demo. Don’t imagine your software. See it.',
+          body: 'Before you commit, we can build the demo. Don\u2019t imagine your software. See it.',
           tags: ['Forti8'],
           cta: {
             primary: { label: 'Request Your Free Demo', href: 'https://calendly.com/krlclement/forti8-intake' },
