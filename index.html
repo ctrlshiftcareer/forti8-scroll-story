@@ -7,10 +7,14 @@
   <meta name="description" content="Scroll through how Forti8 turns messy operations into software you own." />
   <style>
     :root, .sw-root {
-      --sw-bg: #F4F0E8;
-      --sw-ink: #1A1A1A;
-      --sw-ink-soft: #6B7280;
-      --sw-accent: #B4532A;
+      --sw-bg: #0A1128;
+      --sw-card: #181F30;
+      --sw-ink: #F2F3F7;
+      --sw-ink-soft: #A1A4B2;
+      --sw-green: #00BB7F;
+      --sw-yellow: #F99C00;
+      --sw-red: #E64343;
+      --sw-accent: #EABC6E;
     }
   </style>
 </head>
@@ -18,7 +22,7 @@
   <div id="top"></div>
   <div id="world"></div>
 
-  <script src="scrub-engine.js"></script>
+  <script src="scrub-engine.js?v=navy1"></script>
   <script>
     // Clips are placeholders until Jessica says render. Engine falls back to stills on 404.
     mountScrollWorld(document.getElementById('world'), {
@@ -32,7 +36,7 @@
           id: 'messy', label: 'Chaos',
           still: 'assets/still-0.jpg',
           clip: 'assets/vid/dive-0.mp4',
-          accent: '#B4532A',
+          accent: '#EABC6E',
           scroll: 1.7, linger: 0.4,
           eyebrow: 'How work actually lives',
           title: 'Spreadsheets, chats, and someone’s head.',
@@ -43,7 +47,7 @@
           id: 'map', label: 'Map',
           still: 'assets/still-1.jpg',
           clip: 'assets/vid/dive-1.mp4',
-          accent: '#6B7280',
+          accent: '#EABC6E',
           scroll: 1.4, linger: 0.35,
           eyebrow: 'First we see it',
           title: 'We map the process you already run.',
@@ -54,7 +58,7 @@
           id: 'system', label: 'System',
           still: 'assets/still-2.jpg',
           clip: 'assets/vid/dive-2.mp4',
-          accent: '#1A1A1A',
+          accent: '#00BB7F',
           scroll: 1.5, linger: 0.4,
           eyebrow: 'Then you own it',
           title: 'A system that is yours.',
@@ -65,7 +69,7 @@
           id: 'ai', label: 'AI',
           still: 'assets/still-3.jpg',
           clip: 'assets/vid/dive-3.mp4',
-          accent: '#B4532A',
+          accent: '#EABC6E',
           scroll: 1.4, linger: 0.35,
           eyebrow: 'AI that does work',
           title: 'Not another chat window.',
@@ -76,7 +80,7 @@
           id: 'recovered', label: 'Recovered',
           still: 'assets/still-4.jpg',
           clip: 'assets/vid/dive-4.mp4',
-          accent: '#6B7280',
+          accent: '#00BB7F',
           scroll: 1.4, linger: 0.35,
           eyebrow: 'What you get back',
           title: 'Hours. Errors. The evening.',
@@ -87,7 +91,7 @@
           id: 'discuss', label: 'Discuss',
           still: 'assets/still-5.jpg',
           clip: 'assets/vid/dive-5.mp4',
-          accent: '#B4532A',
+          accent: '#EABC6E',
           scroll: 1.8, linger: 0.45,
           eyebrow: 'Bucaramanga, and wherever you run',
           title: 'Show us the process you hate doing manually.',
