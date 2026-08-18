@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Forti8 — fly through the system</title>
+  <meta name="description" content="Scroll through how Forti8 turns messy operations into software you own." />
+  <style>
+    :root, .sw-root {
+      --sw-bg: #F4F0E8;
+      --sw-ink: #1A1A1A;
+      --sw-ink-soft: #6B7280;
+      --sw-accent: #B4532A;
+    }
+  </style>
+</head>
+<body>
+  <div id="top"></div>
+  <div id="world"></div>
+
+  <script src="scrub-engine.js"></script>
+  <script>
+    // Clips are placeholders until Jessica says render. Engine falls back to stills on 404.
+    mountScrollWorld(document.getElementById('world'), {
+      brand: { name: 'Forti8', href: '#top' },
+      cta: { label: 'Request Your Free Demo', href: 'https://calendly.com/krlclement/forti8-intake' },
+      hint: 'scroll to fly in',
+      diveScroll: 1.3,
+      connScroll: 0.9,
+      sections: [
+        {
+          id: 'messy', label: 'Chaos',
+          still: 'assets/still-0.jpg',
+          clip: 'assets/vid/dive-0.mp4',
+          accent: '#B4532A',
+          scroll: 1.7, linger: 0.4,
+          eyebrow: 'How work actually lives',
+          title: 'Spreadsheets, chats, and someone’s head.',
+          body: 'The work is already happening. It just has no system. Re-typed, re-asked, re-lost.',
+          tags: ['Excel', 'WhatsApp', 'Tribal knowledge'],
+        },
+        {
+          id: 'map', label: 'Map',
+          still: 'assets/still-1.jpg',
+          clip: 'assets/vid/dive-1.mp4',
+          accent: '#6B7280',
+          scroll: 1.4, linger: 0.35,
+          eyebrow: 'First we see it',
+          title: 'We map the process you already run.',
+          body: 'Not a stack. The real path from request to done, including the steps nobody wrote down.',
+          tags: ['Process', 'Owners', 'Exceptions'],
+        },
+        {
+          id: 'system', label: 'System',
+          still: 'assets/still-2.jpg',
+          clip: 'assets/vid/dive-2.mp4',
+          accent: '#1A1A1A',
+          scroll: 1.5, linger: 0.4,
+          eyebrow: 'Then you own it',
+          title: 'A system that is yours.',
+          body: 'Custom operational software. You run it. You keep it. Not a rented dashboard.',
+          tags: ['Custom software', 'Control'],
+        },
+        {
+          id: 'ai', label: 'AI',
+          still: 'assets/still-3.jpg',
+          clip: 'assets/vid/dive-3.mp4',
+          accent: '#B4532A',
+          scroll: 1.4, linger: 0.35,
+          eyebrow: 'AI that does work',
+          title: 'Not another chat window.',
+          body: 'Models inside the workflow: extract, route, draft, check. Hours back, fewer errors.',
+          tags: ['Automation', 'AI'],
+        },
+        {
+          id: 'recovered', label: 'Recovered',
+          still: 'assets/still-4.jpg',
+          clip: 'assets/vid/dive-4.mp4',
+          accent: '#6B7280',
+          scroll: 1.4, linger: 0.35,
+          eyebrow: 'What you get back',
+          title: 'Hours. Errors. The evening.',
+          body: 'The point is not the software. It is the time and mistakes you stop spending.',
+          tags: ['Cost', 'Speed', 'Quiet'],
+        },
+        {
+          id: 'discuss', label: 'Discuss',
+          still: 'assets/still-5.jpg',
+          clip: 'assets/vid/dive-5.mp4',
+          accent: '#B4532A',
+          scroll: 1.8, linger: 0.45,
+          eyebrow: 'Bucaramanga, and wherever you run',
+          title: 'Show us the process you hate doing manually.',
+          body: 'Before you commit, we can build the demo. Don’t imagine your software. See it.',
+          tags: ['Forti8'],
+          cta: {
+            primary: { label: 'Request Your Free Demo', href: 'https://calendly.com/krlclement/forti8-intake' },
+            secondary: { label: 'kevin@forti8.io', href: 'mailto:kevin@forti8.io' }
+          },
+        },
+      ],
+      connectors: [
+        'assets/vid/conn-0.mp4',
+        'assets/vid/conn-1.mp4',
+        'assets/vid/conn-2.mp4',
+        'assets/vid/conn-3.mp4',
+        'assets/vid/conn-4.mp4',
+      ],
+    });
+  </script>
+</body>
+</html>
