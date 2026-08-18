@@ -3,7 +3,7 @@ on:
   push:
     branches: [main]
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 concurrency:
@@ -11,15 +11,48 @@ concurrency:
   cancel-in-progress: true
 jobs:
   deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Decode still posters
+        run: |
+          python3 -c "
+          import base64, glob, os
+          os.makedirs('assets', exist_ok=True)
+          for i in range(6):
+              parts = sorted(glob.glob('assets/still-%d.jpg.b64.*' % i))
+              raw = ''
+              if parts:
+                  raw = ''.join(open(p).read().replace(chr(10),'') for p in parts)
+              elif os.path.exists('assets/still-%d.jpg.b64' % i):
+                  raw = open('assets/still-%d.jpg.b64' % i).read().replace(chr(10),'')
+              if raw:
+                  open('assets/still-%d.jpg' % i, 'wb').write(base64.b64decode(raw))
+                  print('decoded', i, len(raw))
+          "
+      - name: Publish gh-pages branch
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          mkdir -p /tmp/site/assets/vid
+          cp -f index.html scrub-engine.js .nojekyll README.md /tmp/site/
+          cp -f assets/vid/README.txt /tmp/site/assets/vid/ || true
+          cp -f assets/still-*.jpg /tmp/site/assets/ || true
+          cd /tmp/site
+          git init
+          git checkout -b gh-pages
+          git add .
+          git commit -m "Publish Forti8 scroll-world engine preview"
+          git remote add origin "https://x-access-token:${GITHUB_TOKEN}@github.com/ctrlshiftcareer/forti8-scroll-story.git"
+          git push -f origin gh-pages
       - uses: actions/configure-pages@v5
+        continue-on-error: true
       - uses: actions/upload-pages-artifact@v3
+        continue-on-error: true
         with:
           path: .
       - id: deployment
         uses: actions/deploy-pages@v4
+        continue-on-error: true
